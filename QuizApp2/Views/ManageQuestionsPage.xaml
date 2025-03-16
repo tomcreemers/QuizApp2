@@ -5,11 +5,37 @@
     x:Class="QuizApp2.Views.ManageQuestionsPage"
     Title="Eigen Vraag Toevoegen">
 
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#e0c3fc" Offset="0.0" />
+            <GradientStop Color="#8ec5fc" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6200EE" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="#ffffffbb" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+        </Style>
+    </ContentPage.Resources>
+
     <VerticalStackLayout Padding="20" Spacing="15">
         <Label Text="Nieuwe Vraag"
                FontAttributes="Bold"
                FontSize="24"
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center"
+               TextColor="#333" />
 
         <!-- Vraag (Prompt) invoer -->
         <Entry Placeholder="Voer je vraag hier in..."
@@ -17,22 +43,22 @@
 
         <!-- Category Picker -->
         <Label Text="Categorie" 
-               FontAttributes="Bold" />
+               FontAttributes="Bold"
+               TextColor="#333" />
         <Picker ItemsSource="{Binding Categories}"
                 SelectedItem="{Binding SelectedCategory}"
                 WidthRequest="200"
                 HorizontalOptions="Center"
-                IsEnabled="True"
                 Title="Kies een categorie" />
 
         <!-- Difficulty Picker (1..5) -->
         <Label Text="Moeilijkheid (1-5)" 
-               FontAttributes="Bold" />
+               FontAttributes="Bold"
+               TextColor="#333" />
         <Picker ItemsSource="{Binding Difficulties}"
                 SelectedItem="{Binding SelectedDifficulty}"
                 WidthRequest="200"
                 HorizontalOptions="Center"
-                IsEnabled="True"
                 Title="Kies een moeilijkheid" />
 
         <Button Text="Opslaan"

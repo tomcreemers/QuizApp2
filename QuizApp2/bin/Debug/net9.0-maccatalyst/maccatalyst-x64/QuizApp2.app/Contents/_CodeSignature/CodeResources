@@ -48,6 +48,10 @@
 		<data>
 		2Ikgd4MekBz4KDFadcRsOaz6Qws=
 		</data>
+		<key>Resources/login.webp</key>
+		<data>
+		DqaRDVKApW9UrxA/tPrLV7v+0FE=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -216,14 +220,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GpmdbywRPVIzP2fLou4kGpAj8ymgNZdv8XjoJBdwAv8=
+			a+XzG0AyfiJlWtzHrQ6XJeZsy96M+Ms5Dq8MJR947OM=
 			</data>
 		</dict>
 		<key>MonoBundle/QuizApp2.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/TnvBX5MpnMOKSKzT6s/D8JZJ8DsGaZ6cRKtKWqFznc=
+			LQPImWl5gI1aeLCbZ7fYIMydkKaEY1AvHIUgZUR4CQM=
 			</data>
 		</dict>
 		<key>MonoBundle/SQLite-net.dll</key>
@@ -1743,6 +1747,13 @@
 			<key>hash2</key>
 			<data>
 			xjB46IJZchU4aUkPUeVRhWJViqBU1K6H3B/8RQ1fB7M=
+			</data>
+		</dict>
+		<key>Resources/login.webp</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hulfceLD+uCszRFVk2SVj0RnsnEfHqDX2CBSsUbjG0U=
 			</data>
 		</dict>
 	</dict>

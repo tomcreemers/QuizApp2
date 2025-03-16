@@ -5,30 +5,60 @@
     x:Class="QuizApp2.Views.QuizPage"
     Title="Quiz Page">
 
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#e0c3fc" Offset="0.0" />
+            <GradientStop Color="#8ec5fc" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6200EE" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="#ffffffbb" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+        </Style>
+    </ContentPage.Resources>
+
     <VerticalStackLayout Padding="20" Spacing="15">
         <!-- Show the selected category and difficulty -->
         <Label Text="{Binding Category}"
                FontAttributes="Bold"
                FontSize="24"
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center"
+               TextColor="#333" />
 
         <Label Text="{Binding DifficultyLabel}"
                FontSize="18"
                HorizontalOptions="Center" 
-               Margin="0,0,0,10" />
+               Margin="0,0,0,10"
+               TextColor="#333" />
 
         <!-- Show the current question -->
         <Label Text="{Binding CurrentQuestion}"
                FontSize="16"
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center"
+               TextColor="#222" />
 
         <Button Text="Next Question"
-                Command="{Binding NextQuestionCommand}" />
+                Command="{Binding NextQuestionCommand}"
+                HorizontalOptions="Center" />
 
         <!-- Chuck Norris joke part -->
-        <Label Text="Random Joke" FontSize="18" />
+        <Label Text="Random Joke" FontSize="18" TextColor="#333" />
         <Button Text="Get Random Joke"
-                Command="{Binding FetchJokeCommand}" />
-        <Label Text="{Binding JokeText}" FontSize="14" />
+                Command="{Binding FetchJokeCommand}"
+                HorizontalOptions="Center" />
+        <Label Text="{Binding JokeText}" FontSize="14" TextColor="#222" />
     </VerticalStackLayout>
 </ContentPage>

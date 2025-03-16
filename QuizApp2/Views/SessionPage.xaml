@@ -5,21 +5,48 @@
     x:Class="QuizApp2.Views.SessionPage"
     Title="Session Room">
 
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#e0c3fc" Offset="0.0" />
+            <GradientStop Color="#8ec5fc" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6200EE" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="#ffffffbb" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+        </Style>
+    </ContentPage.Resources>
+
     <VerticalStackLayout Padding="20" Spacing="15">
         <Label Text="Session Chat"
                FontAttributes="Bold"
                FontSize="24"
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center"
+               TextColor="#333" />
 
         <!-- Chat messages list -->
         <CollectionView ItemsSource="{Binding Messages}"
-                        HeightRequest="200">
+                        HeightRequest="200"
+                        BackgroundColor="#ffffffbb">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="5">
-                        <!-- Show "userName: text" -->
                         <Label Text="{Binding DisplayText}"
-                               FontSize="14" />
+                               FontSize="14"
+                               TextColor="#222" />
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
@@ -33,15 +60,18 @@
 
         <Label Text="Random Question"
                FontAttributes="Bold"
-               FontSize="18" />
+               FontSize="18"
+               TextColor="#333" />
         <Label Text="{Binding CurrentQuestion}"
-               FontSize="14" />
+               FontSize="14"
+               TextColor="#222" />
         <Button Text="Get Random Question"
                 Command="{Binding GetRandomQuestionCommand}" />
 
         <Label Text="Add a Custom Question"
                FontAttributes="Bold"
-               FontSize="18" />
+               FontSize="18"
+               TextColor="#333" />
         <Entry Placeholder="Question Prompt"
                Text="{Binding CustomQuestionPrompt}" />
         <Button Text="Add Question"

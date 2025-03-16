@@ -5,11 +5,37 @@
     x:Class="QuizApp2.Views.HomePage"
     Title="Home">
 
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#e0c3fc" Offset="0.0" />
+            <GradientStop Color="#8ec5fc" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#6200EE" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="#ffffffbb" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontAttributes" Value="None" />
+            <Setter Property="ClearButtonVisibility" Value="WhileEditing" />
+        </Style>
+    </ContentPage.Resources>
+
     <VerticalStackLayout Padding="20" Spacing="15">
         <Label Text="Welcome to QuizApp2!"
                FontAttributes="Bold"
                FontSize="24"
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center"
+               TextColor="#333" />
 
         <Button Text="Account"
                 Command="{Binding GoAccountCommand}" />
@@ -25,8 +51,5 @@
 
         <Button Text="Join Session"
                 Command="{Binding GoJoinSessionCommand}" />
-
-        <!-- <Button Text="Go to Session (ID=1)"
-                Clicked="OnGoToSessionClicked" /> -->
     </VerticalStackLayout>
 </ContentPage>
