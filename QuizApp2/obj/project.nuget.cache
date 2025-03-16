@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tl95r6pwXBo=",
+  "dgSpecHash": "ajjddNSaD0o=",
   "success": true,
   "projectFilePath": "/Users/school/QuizApp2/QuizApp2/QuizApp2.csproj",
   "expectedPackageFiles": [
@@ -193,10 +193,19 @@
       "libraryId": "Newtonsoft.Json",
       "targetGraphs": [
         "net9.0-android35.0",
+        "net9.0-android35.0/android-arm64",
+        "net9.0-android35.0/android-x64",
+        "net9.0-android35.0/iossimulator-x64",
         "net9.0-android35.0/maccatalyst-x64",
         "net9.0-ios18.0",
+        "net9.0-ios18.0/android-arm64",
+        "net9.0-ios18.0/android-x64",
+        "net9.0-ios18.0/iossimulator-x64",
         "net9.0-ios18.0/maccatalyst-x64",
         "net9.0-maccatalyst18.0",
+        "net9.0-maccatalyst18.0/android-arm64",
+        "net9.0-maccatalyst18.0/android-x64",
+        "net9.0-maccatalyst18.0/iossimulator-x64",
         "net9.0-maccatalyst18.0/maccatalyst-x64"
       ]
     }
