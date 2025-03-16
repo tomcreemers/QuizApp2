@@ -14,17 +14,21 @@ namespace QuizApp2.ViewModels
         private readonly JokeApiService _jokeApiService;
         private readonly GenericRepository<QuizQuestion> _quizRepo;
 
-        // The chosen category (e.g. "Economy", "Sports", "Tech")
         private string _category;
         public string Category
         {
             get => _category;
-            set
-            {
-                _category = value;
-                OnPropertyChanged();
-            }
+            set { _category = value; OnPropertyChanged(); }
         }
+
+        private int _difficulty;
+        public int Difficulty
+        {
+            get => _difficulty;
+            set { _difficulty = value; OnPropertyChanged(); }
+        }
+
+        public string DifficultyLabel => $"Difficulty: {Difficulty}";
 
         private List<QuizQuestion> _questions;
         private int _currentIndex;
@@ -33,32 +37,24 @@ namespace QuizApp2.ViewModels
         public string CurrentQuestion
         {
             get => _currentQuestion;
-            set
-            {
-                _currentQuestion = value;
-                OnPropertyChanged();
-            }
+            set { _currentQuestion = value; OnPropertyChanged(); }
         }
 
         private string _jokeText;
         public string JokeText
         {
             get => _jokeText;
-            set
-            {
-                _jokeText = value;
-                OnPropertyChanged();
-            }
+            set { _jokeText = value; OnPropertyChanged(); }
         }
 
         public ICommand NextQuestionCommand { get; }
         public ICommand FetchJokeCommand { get; }
 
-        public QuizViewModel(string category)
+        public QuizViewModel(string category, int difficulty)
         {
             _category = category;
+            _difficulty = difficulty;
 
-            // 1. Initialize repositories/services
             _quizRepo = MauiProgram
                 .CreateMauiApp()
                 .Services
@@ -66,30 +62,30 @@ namespace QuizApp2.ViewModels
 
             _jokeApiService = new JokeApiService();
 
-            // 2. Seed if needed
+            // Seed if needed
             _quizRepo.SeedQuestions();
 
-            // 3. Load questions for the chosen category
+            // Filter questions by category & difficulty
             var allQuestions = _quizRepo.GetAll();
-            _questions = allQuestions
-                .FindAll(q => q.Category.Equals(category, StringComparison.OrdinalIgnoreCase));
+            var filtered = allQuestions
+                .FindAll(q => q.Category.Equals(category, StringComparison.OrdinalIgnoreCase)
+                              && q.Difficulty == difficulty);
 
-            if (_questions.Count == 0)
+            if (filtered.Count == 0)
             {
-                // If no questions found, put a fallback
-                _questions.Add(new QuizQuestion
+                // Fallback question if no matches
+                filtered.Add(new QuizQuestion
                 {
-                    Prompt = "No questions found for this category",
+                    Prompt = "No questions found for this category/difficulty.",
                     Category = category,
-                    Difficulty = "N/A"
+                    Difficulty = difficulty
                 });
             }
 
-            // Start with index 0
+            _questions = filtered;
             _currentIndex = 0;
             CurrentQuestion = _questions[_currentIndex].Prompt;
 
-            // 4. Commands
             NextQuestionCommand = new Command(OnNextQuestion);
             FetchJokeCommand = new Command(async () => await OnFetchJoke());
         }

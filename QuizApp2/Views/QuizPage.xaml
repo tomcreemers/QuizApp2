@@ -6,11 +6,16 @@
     Title="Quiz Page">
 
     <VerticalStackLayout Padding="20" Spacing="15">
-        <!-- Show the selected category -->
+        <!-- Show the selected category and difficulty -->
         <Label Text="{Binding Category}"
                FontAttributes="Bold"
                FontSize="24"
                HorizontalOptions="Center" />
+
+        <Label Text="{Binding DifficultyLabel}"
+               FontSize="18"
+               HorizontalOptions="Center" 
+               Margin="0,0,0,10" />
 
         <!-- Show the current question -->
         <Label Text="{Binding CurrentQuestion}"

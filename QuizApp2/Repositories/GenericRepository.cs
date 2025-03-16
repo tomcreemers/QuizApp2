@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SQLite;
+using QuizApp2.Data;       // for QuizSeedData
+using QuizApp2.Models;    // for QuizQuestion
 
 namespace QuizApp2.Repositories
 {
@@ -51,59 +53,15 @@ namespace QuizApp2.Repositories
             }
         }
 
-        // We'll do a simple seed if T is QuizQuestion
         public void SeedQuestions()
         {
-            if (typeof(T) == typeof(QuizApp2.Models.QuizQuestion))
+            // Only seed if T is QuizQuestion
+            if (typeof(T) == typeof(QuizQuestion))
             {
-                var existing = GetAll() as List<QuizApp2.Models.QuizQuestion>;
+                var existing = GetAll() as List<QuizQuestion>;
                 if (existing == null || existing.Count == 0)
                 {
-                    var seedData = new List<QuizApp2.Models.QuizQuestion>
-                    {
-                        // Economy
-                        new QuizApp2.Models.QuizQuestion
-                        {
-                            Prompt = "What is inflation?",
-                            Category = "Economy",
-                            Difficulty = "Easy"
-                        },
-                        new QuizApp2.Models.QuizQuestion
-                        {
-                            Prompt = "Name one cause of a recession.",
-                            Category = "Economy",
-                            Difficulty = "Medium"
-                        },
-
-                        // Sports
-                        new QuizApp2.Models.QuizQuestion
-                        {
-                            Prompt = "Which country won the 2018 FIFA World Cup?",
-                            Category = "Sports",
-                            Difficulty = "Easy"
-                        },
-                        new QuizApp2.Models.QuizQuestion
-                        {
-                            Prompt = "Who is known as the GOAT in basketball?",
-                            Category = "Sports",
-                            Difficulty = "Medium"
-                        },
-
-                        // Tech
-                        new QuizApp2.Models.QuizQuestion
-                        {
-                            Prompt = "What does 'CPU' stand for?",
-                            Category = "Tech",
-                            Difficulty = "Easy"
-                        },
-                        new QuizApp2.Models.QuizQuestion
-                        {
-                            Prompt = "Which company created the Linux kernel?",
-                            Category = "Tech",
-                            Difficulty = "Medium"
-                        }
-                    };
-
+                    var seedData = QuizSeedData.GetSeedQuestions(); // 75 questions
                     foreach (var q in seedData)
                     {
                         Save(q as T);

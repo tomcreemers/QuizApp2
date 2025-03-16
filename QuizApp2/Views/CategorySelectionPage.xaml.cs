@@ -4,6 +4,8 @@ namespace QuizApp2.Views
 {
     public partial class CategorySelectionPage : ContentPage
     {
+        private string _selectedCategory;
+
         public CategorySelectionPage()
         {
             InitializeComponent();
@@ -14,11 +16,16 @@ namespace QuizApp2.Views
         {
             if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
             {
-                var selectedCategory = e.CurrentSelection[0] as string;
-                if (BindingContext is CategorySelectionViewModel vm)
-                {
-                    vm.SelectCategoryCommand.Execute(selectedCategory);
-                }
+                _selectedCategory = e.CurrentSelection[0] as string;
+            }
+        }
+
+        private void OnStartQuizClicked(object sender, EventArgs e)
+        {
+            // We pass both category + difficulty to the VM's command
+            if (BindingContext is CategorySelectionViewModel vm)
+            {
+                vm.StartQuizCommand.Execute(_selectedCategory);
             }
         }
     }

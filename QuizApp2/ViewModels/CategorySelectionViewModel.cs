@@ -13,20 +13,35 @@ namespace QuizApp2.ViewModels
         public ObservableCollection<string> Categories
         {
             get => _categories;
+            set { _categories = value; OnPropertyChanged(); }
+        }
+
+        private ObservableCollection<int> _difficulties;
+        public ObservableCollection<int> Difficulties
+        {
+            get => _difficulties;
+            set { _difficulties = value; OnPropertyChanged(); }
+        }
+
+        private int _selectedDifficulty;
+        public int SelectedDifficulty
+        {
+            get => _selectedDifficulty;
             set
             {
-                _categories = value;
+                _selectedDifficulty = value;
                 OnPropertyChanged();
             }
         }
 
-        public ICommand SelectCategoryCommand { get; }
+        // This command is triggered by the "Start Quiz" button
+        public ICommand StartQuizCommand { get; }
 
         public CategorySelectionViewModel(INavigation navigation)
         {
             _navigation = navigation;
 
-            // Hardcode categories for simplicity
+            // Hardcode categories
             Categories = new ObservableCollection<string>
             {
                 "Economy",
@@ -34,14 +49,23 @@ namespace QuizApp2.ViewModels
                 "Tech"
             };
 
-            // Command to handle category selection
-            SelectCategoryCommand = new Command<string>(OnSelectCategory);
+            // Hardcode difficulties 1..5
+            Difficulties = new ObservableCollection<int> { 1, 2, 3, 4, 5 };
+            SelectedDifficulty = 1; // default
+
+            StartQuizCommand = new Command<string>(OnStartQuiz);
         }
 
-        private async void OnSelectCategory(string category)
+        private async void OnStartQuiz(string category)
         {
-            // Navigate to QuizPage with the chosen category
-            await _navigation.PushAsync(new Views.QuizPage(category));
+            if (string.IsNullOrEmpty(category))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Please select a category.", "OK");
+                return;
+            }
+
+            // Navigate to QuizPage with chosen category + difficulty
+            await _navigation.PushAsync(new Views.QuizPage(category, SelectedDifficulty));
         }
 
         #region INotifyPropertyChanged

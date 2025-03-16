@@ -9,9 +9,9 @@ namespace QuizApp2.Models
         public int Id { get; set; }
 
         public string Prompt { get; set; }
-        
+
         public string Category { get; set; }
 
-        public string Difficulty { get; set; }
+        public int Difficulty { get; set; }
     }
 }

@@ -3,15 +3,15 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="QuizApp2.Views.CategorySelectionPage"
-    Title="Select a Category">
+    Title="Select Category &amp; Difficulty">
 
     <VerticalStackLayout Padding="20" Spacing="15">
-        <Label Text="Choose Your Category"
-               FontAttributes="Bold"
-               FontSize="24"
+        <Label Text="Choose Category" 
+               FontAttributes="Bold" 
+               FontSize="24" 
                HorizontalOptions="Center" />
 
-        <!-- A simple ListView or CollectionView to show categories -->
+        <!-- List of categories (Economy, Sports, Tech) -->
         <CollectionView ItemsSource="{Binding Categories}"
                         SelectionMode="Single"
                         SelectionChanged="OnCategorySelected">
@@ -23,5 +23,19 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
+        <Label Text="Choose Difficulty (1-5)" 
+               FontAttributes="Bold"
+               FontSize="24" 
+               HorizontalOptions="Center"
+               Margin="0,20,0,0" />
+
+        <!-- Picker for difficulties (1..5) -->
+        <Picker ItemsSource="{Binding Difficulties}" 
+                Title="Select Difficulty"
+                SelectedItem="{Binding SelectedDifficulty}" />
+
+        <Button Text="Start Quiz"
+                Clicked="OnStartQuizClicked" />
     </VerticalStackLayout>
 </ContentPage>
