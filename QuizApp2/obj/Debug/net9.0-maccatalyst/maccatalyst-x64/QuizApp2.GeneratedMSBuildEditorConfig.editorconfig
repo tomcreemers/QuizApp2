@@ -60,6 +60,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.CreateSessi
 build_metadata.AdditionalFiles.TargetPath = Views/CreateSessionPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views/CreateSessionPage.xaml
 
+[/Users/school/QuizApp2/QuizApp2/Views/FlashlightPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.FlashlightPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/FlashlightPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/FlashlightPage.xaml
+
 [/Users/school/QuizApp2/QuizApp2/Views/HomePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.HomePage.xaml

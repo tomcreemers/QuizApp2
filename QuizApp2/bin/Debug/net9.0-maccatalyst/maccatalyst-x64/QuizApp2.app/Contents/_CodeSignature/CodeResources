@@ -209,6 +209,13 @@
 			XZbuUbKv9ZIDnuvC7SA9n1X935wIgvs00/DgeDdJVKU=
 			</data>
 		</dict>
+		<key>MonoBundle/Plugin.LocalNotification.dll</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JbjFjRJuulc4KTK7Vi+TDc5+ALBbEAOHS6Tx0WFSThs=
+			</data>
+		</dict>
 		<key>MonoBundle/QRCoder.dll</key>
 		<dict>
 			<key>hash2</key>
@@ -220,14 +227,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a+XzG0AyfiJlWtzHrQ6XJeZsy96M+Ms5Dq8MJR947OM=
+			QJtg5BK+FmOvu7th3A+bJ+nJqgL5ywKWW6NjWizKdZ4=
 			</data>
 		</dict>
 		<key>MonoBundle/QuizApp2.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LQPImWl5gI1aeLCbZ7fYIMydkKaEY1AvHIUgZUR4CQM=
+			KbThTmpLq3aPqMJk3rNrvaBnTYgkO+J87aTHFDt/iuo=
 			</data>
 		</dict>
 		<key>MonoBundle/SQLite-net.dll</key>

@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using QuizApp2.Models;
 using QuizApp2.Repositories;
+using Plugin.LocalNotification; // <-- For local notifications
 
 namespace QuizApp2.ViewModels
 {
@@ -52,7 +53,7 @@ namespace QuizApp2.ViewModels
 
         public ManageQuestionsViewModel()
         {
-            // Hardcode categorieën (of haal ze ergens anders vandaan)
+            // Hardcode categorieën
             Categories = new ObservableCollection<string>
             {
                 "Economy",
@@ -66,7 +67,7 @@ namespace QuizApp2.ViewModels
             // Default
             SelectedDifficulty = 1;
 
-            // Haal de repository op
+            // Resolve the repository
             _quizRepo = MauiProgram
                 .CreateMauiApp()
                 .Services
@@ -103,13 +104,31 @@ namespace QuizApp2.ViewModels
             // Opslaan in DB
             _quizRepo.Save(newQuestion);
 
-            // Eventuele melding
+            // Toon melding (alert)
             await Application.Current.MainPage.DisplayAlert("Sukses", "Vraag opgeslagen!", "OK");
+
+            // Trigger local notification
+            ShowNewQuestionNotification(newQuestion);
 
             // Reset velden
             Prompt = string.Empty;
             SelectedCategory = null;
             SelectedDifficulty = 1;
+        }
+
+        private void ShowNewQuestionNotification(QuizQuestion question)
+        {
+            var request = new NotificationRequest
+            {
+                NotificationId = 9001, // unique ID
+                Title = "New Question Added",
+                Description = $"Prompt: {question.Prompt}",
+                ReturningData = "Some data", // optional
+                Schedule = null // show immediately
+            };
+
+            // Show the local notification
+            LocalNotificationCenter.Current.Show(request);
         }
 
         #region INotifyPropertyChanged

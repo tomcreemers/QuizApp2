@@ -16,6 +16,9 @@ namespace QuizApp2
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
+                
+                
+
 
             // Register repositories
             builder.Services.AddSingleton<GenericRepository<User>>();

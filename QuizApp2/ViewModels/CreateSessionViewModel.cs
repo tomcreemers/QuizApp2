@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using QuizApp2.Models;
 using QuizApp2.Repositories;
+using Microsoft.Maui.ApplicationModel; // for Vibration
 
 namespace QuizApp2.ViewModels
 {
@@ -34,13 +35,13 @@ namespace QuizApp2.ViewModels
 
         public CreateSessionViewModel()
         {
-            // Get the repository
+            // Resolve the repository
             _sessionRepo = MauiProgram
                 .CreateMauiApp()
                 .Services
                 .GetService<GenericRepository<Session>>();
 
-            // Hardcode difficulties
+            // Hardcode difficulties 1..5
             Difficulties = new ObservableCollection<int> { 1, 2, 3, 4, 5 };
 
             // Default difficulty
@@ -86,6 +87,9 @@ namespace QuizApp2.ViewModels
                 await Application.Current.MainPage.DisplayAlert("Success", 
                     $"Session created with ID={newSession.Id}\nCode={newSession.SessionCode}", 
                     "OK");
+
+                // Vibrate phone for 500ms after success
+                Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(500));
 
                 // Optionally navigate back or stay
                 await Application.Current.MainPage.Navigation.PopAsync();

@@ -442,6 +442,22 @@
           }
         }
       },
+      "Plugin.LocalNotification/11.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "121.2.0"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "QRCoder/1.6.0": {
         "type": "package",
         "compile": {
@@ -2234,6 +2250,13 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.11.0.3": {
         "type": "package",
         "dependencies": {
@@ -2329,6 +2352,97 @@
         },
         "build": {
           "buildTransitive/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.4.0.5",
+          "Xamarin.AndroidX.Core": "1.13.1.2",
+          "Xamarin.AndroidX.Fragment": "1.7.0.2",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.3.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.3.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.4.0.5",
+          "Xamarin.AndroidX.Core": "1.13.1.2",
+          "Xamarin.AndroidX.Fragment": "1.7.0.2",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/121.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.4.0",
+          "Xamarin.GooglePlayServices.Basement": "118.3.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.1.0.2",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4",
+          "Xamarin.KotlinX.Coroutines.Core": "1.8.0.4"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.3.0.2"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.1.0.8": {
@@ -2963,6 +3077,22 @@
           }
         }
       },
+      "Plugin.LocalNotification/11.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.GooglePlayServices.Location": "121.2.0"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "QRCoder/1.6.0": {
         "type": "package",
         "compile": {
@@ -4755,6 +4885,13 @@
           "buildTransitive/net8.0-android34.0/Xamarin.AndroidX.Window.Extensions.Core.Core.targets": {}
         }
       },
+      "Xamarin.Build.Download/0.11.4": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Xamarin.Build.Download.props": {},
+          "buildTransitive/Xamarin.Build.Download.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.11.0.3": {
         "type": "package",
         "dependencies": {
@@ -4850,6 +4987,97 @@
         },
         "build": {
           "buildTransitive/net8.0-android34.0/Xamarin.Google.Guava.ListenableFuture.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Base/118.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.4.0.5",
+          "Xamarin.AndroidX.Core": "1.13.1.2",
+          "Xamarin.AndroidX.Fragment": "1.7.0.2",
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.3.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.1.0.2"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Base.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Base.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Basement/118.3.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Collection": "1.4.0.5",
+          "Xamarin.AndroidX.Core": "1.13.1.2",
+          "Xamarin.AndroidX.Fragment": "1.7.0.2",
+          "Xamarin.Build.Download": "0.11.4"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Location/121.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Base": "118.4.0",
+          "Xamarin.GooglePlayServices.Basement": "118.3.0.2",
+          "Xamarin.GooglePlayServices.Tasks": "118.1.0.2",
+          "Xamarin.Kotlin.StdLib": "1.9.23.3",
+          "Xamarin.KotlinX.Coroutines.Android": "1.8.0.4",
+          "Xamarin.KotlinX.Coroutines.Core": "1.8.0.4"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Location.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Location.targets": {}
+        }
+      },
+      "Xamarin.GooglePlayServices.Tasks/118.1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Build.Download": "0.11.4",
+          "Xamarin.GooglePlayServices.Basement": "118.3.0.2"
+        },
+        "compile": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.targets": {}
         }
       },
       "Xamarin.Jetbrains.Annotations/24.1.0.8": {
@@ -5524,6 +5752,19 @@
         },
         "runtime": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Plugin.LocalNotification/11.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.2/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/Plugin.LocalNotification.dll": {
             "related": ".xml"
           }
         }
@@ -6636,6 +6877,19 @@
         },
         "runtime": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Plugin.LocalNotification/11.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-ios17.2/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-ios17.2/Plugin.LocalNotification.dll": {
             "related": ".xml"
           }
         }
@@ -8001,6 +8255,19 @@
           }
         }
       },
+      "Plugin.LocalNotification/11.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "QRCoder/1.6.0": {
         "type": "package",
         "compile": {
@@ -9203,6 +9470,19 @@
         },
         "runtime": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Plugin.LocalNotification/11.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Plugin.LocalNotification.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Plugin.LocalNotification.dll": {
             "related": ".xml"
           }
         }
@@ -11324,6 +11604,27 @@
         "newtonsoft.json.9.0.1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "Plugin.LocalNotification/11.1.4": {
+      "sha512": "X/Z808LXBq+sRpw3F3gwuCaJ7wIp8pf3K/v5rP2cO4Wu5Zun5BFv2j/UE6qjsElUbgdHecRcxzN/z7rc457+0w==",
+      "type": "package",
+      "path": "plugin.localnotification/11.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "icon.png",
+        "lib/net8.0-android34.0/Plugin.LocalNotification.dll",
+        "lib/net8.0-android34.0/Plugin.LocalNotification.xml",
+        "lib/net8.0-ios17.2/Plugin.LocalNotification.dll",
+        "lib/net8.0-ios17.2/Plugin.LocalNotification.xml",
+        "lib/net8.0-windows10.0.19041/Plugin.LocalNotification.dll",
+        "lib/net8.0-windows10.0.19041/Plugin.LocalNotification.xml",
+        "lib/net8.0/Plugin.LocalNotification.dll",
+        "lib/net8.0/Plugin.LocalNotification.xml",
+        "plugin.localnotification.11.1.4.nupkg.sha512",
+        "plugin.localnotification.nuspec"
       ]
     },
     "QRCoder/1.6.0": {
@@ -15685,6 +15986,28 @@
         "xamarin.androidx.window.extensions.core.core.nuspec"
       ]
     },
+    "Xamarin.Build.Download/0.11.4": {
+      "sha512": "u2ROt0h6P7mfs0jbmgvmTrqU/YEpEZcf16xcHa78GSEp7fOZunNtJLCZxooeI1V5p+lrr9kYdg3Pa8FoTbgcXQ==",
+      "type": "package",
+      "path": "xamarin.build.download/0.11.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "THIRD-PARTY-NOTICE.txt",
+        "build/Microsoft.Win32.Registry.dll",
+        "build/Newtonsoft.Json.dll",
+        "build/Xamarin.Build.Download.dll",
+        "build/Xamarin.Build.Download.props",
+        "build/Xamarin.Build.Download.targets",
+        "buildTransitive/Microsoft.Win32.Registry.dll",
+        "buildTransitive/Newtonsoft.Json.dll",
+        "buildTransitive/Xamarin.Build.Download.dll",
+        "buildTransitive/Xamarin.Build.Download.props",
+        "buildTransitive/Xamarin.Build.Download.targets",
+        "xamarin.build.download.0.11.4.nupkg.sha512",
+        "xamarin.build.download.nuspec"
+      ]
+    },
     "Xamarin.Google.Android.Material/1.11.0.3": {
       "sha512": "Vq0EuJdA99sC2/TuK0MgMrKkFOGXQJk6gQAwE3XHLzXriVgTOAPj7ruzl5RNmWOWQHoFnLKfGigy72uC821YWg==",
       "type": "package",
@@ -15781,6 +16104,83 @@
         "readme.md",
         "xamarin.google.guava.listenablefuture.1.0.0.24.nupkg.sha512",
         "xamarin.google.guava.listenablefuture.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Base/118.4.0": {
+      "sha512": "Z/103gIf3EjaJoug4aKACLbYnScequP1iTT7nxmvLvUhaoEiIXAFyNuJV7sdmW5kzSTceSKCxfA8q57ZEmcSPw==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.base/118.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net8.0-android34.0/Xamarin.GooglePlayServices.Base.targets",
+        "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Base.targets",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Base.dll",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Base.pdb",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Base.xml",
+        "lib/net8.0-android34.0/play-services-base.aar",
+        "proguard/proguard.txt",
+        "readme.md",
+        "xamarin.googleplayservices.base.118.4.0.nupkg.sha512",
+        "xamarin.googleplayservices.base.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Basement/118.3.0.2": {
+      "sha512": "CDWygAHmlmBruegun2qXhY6u78y0UD0giALaKgHc/N4TeRkJX9nlmnvt2O9F+RIlfzcASpOCNFNyVouO3TyPbA==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.basement/118.3.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.targets",
+        "build/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.dll",
+        "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.targets",
+        "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.dll",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.dll",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.pdb",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Basement.xml",
+        "lib/net8.0-android34.0/play-services-basement.aar",
+        "proguard/proguard.txt",
+        "readme.md",
+        "xamarin.googleplayservices.basement.118.3.0.2.nupkg.sha512",
+        "xamarin.googleplayservices.basement.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Location/121.2.0": {
+      "sha512": "6HKkMjF0Ze7BdGeebmPxP9sW4ulQHEcqX/KYqA4m0ddOxsScdXU1q+ah3wtkcdOG5Py0hxf8+tQhtz2rDjJ3Zw==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.location/121.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net8.0-android34.0/Xamarin.GooglePlayServices.Location.targets",
+        "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Location.targets",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Location.dll",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Location.pdb",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Location.xml",
+        "lib/net8.0-android34.0/play-services-location.aar",
+        "readme.md",
+        "xamarin.googleplayservices.location.121.2.0.nupkg.sha512",
+        "xamarin.googleplayservices.location.nuspec"
+      ]
+    },
+    "Xamarin.GooglePlayServices.Tasks/118.1.0.2": {
+      "sha512": "lz4WXtUE3iVRNZhXPdB2SqCL7mua7OX6FuxrmveQezeqGO3fkj2XyicFgqlinGx4fv4gE5QeLrHN5NLRmAt3IQ==",
+      "type": "package",
+      "path": "xamarin.googleplayservices.tasks/118.1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.targets",
+        "buildTransitive/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.targets",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.dll",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.pdb",
+        "lib/net8.0-android34.0/Xamarin.GooglePlayServices.Tasks.xml",
+        "lib/net8.0-android34.0/play-services-tasks.aar",
+        "proguard/proguard.txt",
+        "readme.md",
+        "xamarin.googleplayservices.tasks.118.1.0.2.nupkg.sha512",
+        "xamarin.googleplayservices.tasks.nuspec"
       ]
     },
     "Xamarin.Jetbrains.Annotations/24.1.0.8": {
@@ -15979,6 +16379,7 @@
       "Microsoft.Extensions.Logging.Debug >= 9.0.3",
       "Microsoft.Maui.Controls >= 9.0.0",
       "Microsoft.NET.ILLink.Tasks >= 9.0.0",
+      "Plugin.LocalNotification >= 11.1.4",
       "QRCoder >= 1.6.0",
       "SQLiteNetExtensions >= 2.1.0",
       "sqlite-net-pcl >= 1.9.172"
@@ -15987,6 +16388,7 @@
       "Microsoft.Extensions.Logging.Debug >= 9.0.3",
       "Microsoft.Maui.Controls >= 9.0.0",
       "Microsoft.NET.ILLink.Tasks >= 9.0.0",
+      "Plugin.LocalNotification >= 11.1.4",
       "QRCoder >= 1.6.0",
       "SQLiteNetExtensions >= 2.1.0",
       "sqlite-net-pcl >= 1.9.172"
@@ -15995,6 +16397,7 @@
       "Microsoft.Extensions.Logging.Debug >= 9.0.3",
       "Microsoft.Maui.Controls >= 9.0.0",
       "Microsoft.NET.ILLink.Tasks >= 9.0.0",
+      "Plugin.LocalNotification >= 11.1.4",
       "QRCoder >= 1.6.0",
       "SQLiteNetExtensions >= 2.1.0",
       "sqlite-net-pcl >= 1.9.172"
@@ -16069,6 +16472,10 @@
             "version": "[9.0.0, )",
             "autoReferenced": true
           },
+          "Plugin.LocalNotification": {
+            "target": "Package",
+            "version": "[11.1.4, )"
+          },
           "QRCoder": {
             "target": "Package",
             "version": "[1.6.0, )"
@@ -16120,6 +16527,10 @@
             "version": "[9.0.0, )",
             "autoReferenced": true
           },
+          "Plugin.LocalNotification": {
+            "target": "Package",
+            "version": "[11.1.4, )"
+          },
           "QRCoder": {
             "target": "Package",
             "version": "[1.6.0, )"
@@ -16170,6 +16581,10 @@
             "target": "Package",
             "version": "[9.0.0, )",
             "autoReferenced": true
+          },
+          "Plugin.LocalNotification": {
+            "target": "Package",
+            "version": "[11.1.4, )"
           },
           "QRCoder": {
             "target": "Package",

@@ -12,6 +12,8 @@ namespace QuizApp2.ViewModels
         public ICommand GoManageQuestionsCommand { get; }
         public ICommand GoCreateSessionCommand { get; }
         public ICommand GoJoinSessionCommand { get; }
+        public ICommand GoFlashlightCommand { get; }
+
 
         // New command: GoToSessionCommand (for an existing session ID)
         public ICommand GoToSessionCommand { get; }
@@ -49,6 +51,11 @@ namespace QuizApp2.ViewModels
             {
                 // If you know the session ID
                 await Application.Current.MainPage.Navigation.PushAsync(new SessionPage(sessionId));
+            });
+
+            GoFlashlightCommand = new Command(async () =>
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new FlashlightPage());
             });
         }
 

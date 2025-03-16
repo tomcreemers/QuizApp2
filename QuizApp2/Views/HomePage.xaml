@@ -51,5 +51,9 @@
 
         <Button Text="Join Session"
                 Command="{Binding GoJoinSessionCommand}" />
+
+        <Button Text="Flashlight"
+                Command="{Binding GoFlashlightCommand}" />
+
     </VerticalStackLayout>
 </ContentPage>

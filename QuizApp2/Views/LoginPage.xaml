@@ -32,7 +32,6 @@
     </ContentPage.Resources>
 
     <VerticalStackLayout Padding="20" Spacing="15">
-        <!-- Chuck Norris 'asking questions' image -->
         <Image Source="login.webp"
                Aspect="AspectFit"
                HeightRequest="150"
