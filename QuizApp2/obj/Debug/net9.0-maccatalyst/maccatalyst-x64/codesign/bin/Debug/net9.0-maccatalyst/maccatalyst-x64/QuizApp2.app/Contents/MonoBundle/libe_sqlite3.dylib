@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Users/school/QuizApp2/QuizApp2/bin/Debug/net9.0-maccatalyst/maccatalyst-x64/QuizApp2.app/Contents/MonoBundle/libe_sqlite3.dylib

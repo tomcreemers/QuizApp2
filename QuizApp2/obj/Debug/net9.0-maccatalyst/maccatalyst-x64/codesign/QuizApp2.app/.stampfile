@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/Entitlements.xcent /Users/school/QuizApp2/QuizApp2/bin/Debug/net9.0-maccatalyst/maccatalyst-x64/QuizApp2.app
