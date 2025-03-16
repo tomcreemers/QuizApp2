@@ -19,5 +19,9 @@
 
         <Button Text="Maak Eigen Vraag"
                 Command="{Binding GoManageQuestionsCommand}" />
+
+        <Button Text="Create Session"
+                Command="{Binding GoCreateSessionCommand}" />
+
     </VerticalStackLayout>
 </ContentPage>

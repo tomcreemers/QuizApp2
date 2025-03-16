@@ -9,26 +9,35 @@ namespace QuizApp2.ViewModels
     {
         public ICommand GoAccountCommand { get; }
         public ICommand GoCategoryCommand { get; }
-        
-        // Nieuwe command voor ManageQuestionsPage
         public ICommand GoManageQuestionsCommand { get; }
+
+        // Add this property for creating a session
+        public ICommand GoCreateSessionCommand { get; }
 
         public HomeViewModel()
         {
+            // Account
             GoAccountCommand = new Command(async () =>
             {
                 await Application.Current.MainPage.Navigation.PushAsync(new AccountPage());
             });
 
+            // Category selection
             GoCategoryCommand = new Command(async () =>
             {
                 await Application.Current.MainPage.Navigation.PushAsync(new CategorySelectionPage());
             });
 
-            // Command om naar pagina te gaan waar je vragen kunt toevoegen
+            // Manage questions
             GoManageQuestionsCommand = new Command(async () =>
             {
                 await Application.Current.MainPage.Navigation.PushAsync(new ManageQuestionsPage());
+            });
+
+            // Create session
+            GoCreateSessionCommand = new Command(async () =>
+            {
+                await Application.Current.MainPage.Navigation.PushAsync(new CreateSessionPage());
             });
         }
 
