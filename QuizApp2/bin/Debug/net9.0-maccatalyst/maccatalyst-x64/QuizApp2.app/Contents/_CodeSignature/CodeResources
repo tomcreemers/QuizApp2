@@ -205,18 +205,25 @@
 			XZbuUbKv9ZIDnuvC7SA9n1X935wIgvs00/DgeDdJVKU=
 			</data>
 		</dict>
+		<key>MonoBundle/QRCoder.dll</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PFZ09nqX/Z7TjdU32JLunv0yivrU1sHWf5n94sEI3Vc=
+			</data>
+		</dict>
 		<key>MonoBundle/QuizApp2.dll</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HEYWM9j616YxM44O8IdH8iW/E6X6cXudIeklv5KkSkk=
+			m25ZVCVsj/OqklhBa3bnWOijpq+fAQh8AqlP/8lkq8E=
 			</data>
 		</dict>
 		<key>MonoBundle/QuizApp2.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pz0LPjCDfVwOSgQlGGpWEvvGYhp538Ysz+T6uP7XeLo=
+			2MHrrqTs4A21sbnBC0VHhx6c1fae8/u7YVBZmwzJnnE=
 			</data>
 		</dict>
 		<key>MonoBundle/SQLite-net.dll</key>

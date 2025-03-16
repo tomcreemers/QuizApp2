@@ -55,13 +55,13 @@ namespace QuizApp2.Repositories
 
         public void SeedQuestions()
         {
-            // Only seed if T is QuizQuestion
             if (typeof(T) == typeof(QuizQuestion))
             {
                 var existing = GetAll() as List<QuizQuestion>;
                 if (existing == null || existing.Count == 0)
                 {
-                    var seedData = QuizSeedData.GetSeedQuestions(); // 75 questions
+                    // Call your QuizSeedData file
+                    var seedData = QuizSeedData.GetSeedQuestions();
                     foreach (var q in seedData)
                     {
                         Save(q as T);
@@ -69,5 +69,6 @@ namespace QuizApp2.Repositories
                 }
             }
         }
+
     }
 }

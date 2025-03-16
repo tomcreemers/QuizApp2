@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="QuizApp2.Views.ManageQuestionsPage"
+    Title="Eigen Vraag Toevoegen">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Nieuwe Vraag"
+               FontAttributes="Bold"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <!-- Vraag (Prompt) invoer -->
+        <Entry Placeholder="Voer je vraag hier in..."
+               Text="{Binding Prompt}" />
+
+        <!-- Category Picker -->
+        <Label Text="Categorie" 
+               FontAttributes="Bold" />
+        <Picker ItemsSource="{Binding Categories}"
+                SelectedItem="{Binding SelectedCategory}"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                IsEnabled="True"
+                Title="Kies een categorie" />
+
+        <!-- Difficulty Picker (1..5) -->
+        <Label Text="Moeilijkheid (1-5)" 
+               FontAttributes="Bold" />
+        <Picker ItemsSource="{Binding Difficulties}"
+                SelectedItem="{Binding SelectedDifficulty}"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                IsEnabled="True"
+                Title="Kies een moeilijkheid" />
+
+        <Button Text="Opslaan"
+                Command="{Binding SaveCommand}" />
+
+        <Button Text="Terug"
+                Command="{Binding ReturnCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

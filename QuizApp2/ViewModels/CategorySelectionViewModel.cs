@@ -34,7 +34,7 @@ namespace QuizApp2.ViewModels
             }
         }
 
-        // This command is triggered by the "Start Quiz" button
+        // Command triggered by "Start Quiz" button
         public ICommand StartQuizCommand { get; }
 
         public CategorySelectionViewModel(INavigation navigation)
@@ -51,7 +51,9 @@ namespace QuizApp2.ViewModels
 
             // Hardcode difficulties 1..5
             Difficulties = new ObservableCollection<int> { 1, 2, 3, 4, 5 };
-            SelectedDifficulty = 1; // default
+
+            // Remove the forced default (or set it to 0) so user picks:
+            // SelectedDifficulty = 1;  // <--- removed
 
             StartQuizCommand = new Command<string>(OnStartQuiz);
         }
@@ -61,6 +63,12 @@ namespace QuizApp2.ViewModels
             if (string.IsNullOrEmpty(category))
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Please select a category.", "OK");
+                return;
+            }
+
+            if (SelectedDifficulty < 1 || SelectedDifficulty > 5)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Please select a difficulty (1-5).", "OK");
                 return;
             }
 

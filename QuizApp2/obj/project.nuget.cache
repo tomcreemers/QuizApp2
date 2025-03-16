@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tl95r6pwXBo=",
+  "dgSpecHash": "/osfIXCGBp4=",
   "success": true,
   "projectFilePath": "/Users/school/QuizApp2/QuizApp2/QuizApp2.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "/Users/school/.nuget/packages/microsoft.netcore.platforms/1.0.1/microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "/Users/school/.nuget/packages/microsoft.netcore.targets/1.0.1/microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "/Users/school/.nuget/packages/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg.sha512",
+    "/Users/school/.nuget/packages/qrcoder/1.6.0/qrcoder.1.6.0.nupkg.sha512",
     "/Users/school/.nuget/packages/runtime.any.system.collections/4.0.11/runtime.any.system.collections.4.0.11.nupkg.sha512",
     "/Users/school/.nuget/packages/runtime.any.system.diagnostics.tools/4.0.1/runtime.any.system.diagnostics.tools.4.0.1.nupkg.sha512",
     "/Users/school/.nuget/packages/runtime.any.system.globalization/4.0.11/runtime.any.system.globalization.4.0.11.nupkg.sha512",

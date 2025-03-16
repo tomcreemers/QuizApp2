@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="QuizApp2.Views.HomePage"
+    Title="Home">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Welcome to QuizApp2!"
+               FontAttributes="Bold"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <Button Text="Account"
+                Command="{Binding GoAccountCommand}" />
+
+        <Button Text="Select Quiz"
+                Command="{Binding GoCategoryCommand}" />
+
+        <Button Text="Maak Eigen Vraag"
+                Command="{Binding GoManageQuestionsCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

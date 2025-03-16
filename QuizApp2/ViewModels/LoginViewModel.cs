@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using QuizApp2.Models;
 using QuizApp2.Repositories;
+using QuizApp2.Views;
 
 namespace QuizApp2.ViewModels
 {
@@ -15,14 +16,22 @@ namespace QuizApp2.ViewModels
         public string Email
         {
             get => _email;
-            set { _email = value; OnPropertyChanged(); }
+            set
+            {
+                _email = value;
+                OnPropertyChanged();
+            }
         }
 
         private string _password;
         public string Password
         {
             get => _password;
-            set { _password = value; OnPropertyChanged(); }
+            set
+            {
+                _password = value;
+                OnPropertyChanged();
+            }
         }
 
         public ICommand LoginCommand { get; }
@@ -32,7 +41,7 @@ namespace QuizApp2.ViewModels
         {
             _navigation = navigation;
 
-            // Resolve the user repository
+            // Resolve user repository from DI
             _userRepo = MauiProgram
                 .CreateMauiApp()
                 .Services
@@ -41,31 +50,61 @@ namespace QuizApp2.ViewModels
             LoginCommand = new Command(OnLogin);
             GoRegisterCommand = new Command(async () =>
             {
-                await _navigation.PushAsync(new Views.RegisterPage());
+                // Navigate to the RegisterPage
+                await _navigation.PushAsync(new RegisterPage());
             });
         }
 
         private async void OnLogin()
         {
-            if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
+            try
             {
-                await App.Current.MainPage.DisplayAlert("Error", "Fields cannot be empty", "OK");
-                return;
+                // Debug line to confirm OnLogin is called
+                Console.WriteLine("OnLogin triggered!");
+
+                if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
+                {
+                    Console.WriteLine("Email or password is empty.");
+                    await App.Current.MainPage.DisplayAlert("Error", "Fields cannot be empty", "OK");
+                    return;
+                }
+
+                // Get all users from DB
+                var users = _userRepo.GetAll();
+                if (users == null)
+                {
+                    Console.WriteLine("Users is null (DB might be empty or not created).");
+                    await App.Current.MainPage.DisplayAlert("Error", "No users in DB", "OK");
+                    return;
+                }
+
+                Console.WriteLine($"Found {users.Count} users in DB.");
+
+                // Check if any user matches Email + Password
+                var foundUser = users.FirstOrDefault(u => u.Email == Email && u.Password == Password);
+                if (foundUser != null)
+                {
+                    Console.WriteLine($"User found: {foundUser.Email}. Logging in...");
+
+                    // We DO NOT store anything in SecureStorage:
+                    // (removed) await SecureStorage.SetAsync("email", Email);
+                    // (removed) await SecureStorage.SetAsync("password", Password);
+
+                    await App.Current.MainPage.DisplayAlert("Success", "Login successful!", "OK");
+
+                    // Navigate to HomePage
+                    await _navigation.PushAsync(new HomePage());
+                }
+                else
+                {
+                    Console.WriteLine("No user matched the provided credentials.");
+                    await App.Current.MainPage.DisplayAlert("Error", "Invalid credentials", "OK");
+                }
             }
-
-            var users = _userRepo.GetAll();
-            var foundUser = users.FirstOrDefault(u => u.Email == Email && u.Password == Password);
-
-            if (foundUser != null)
+            catch (Exception ex)
             {
-                await App.Current.MainPage.DisplayAlert("Success", "Login successful!", "OK");
-
-                // Go to CategorySelectionPage instead of QuizPage
-                await _navigation.PushAsync(new Views.CategorySelectionPage());
-            }
-            else
-            {
-                await App.Current.MainPage.DisplayAlert("Error", "Invalid credentials", "OK");
+                Console.WriteLine($"Exception in OnLogin: {ex.Message}");
+                await App.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
             }
         }
 

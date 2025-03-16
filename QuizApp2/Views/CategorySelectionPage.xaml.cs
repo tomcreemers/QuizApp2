@@ -22,7 +22,7 @@ namespace QuizApp2.Views
 
         private void OnStartQuizClicked(object sender, EventArgs e)
         {
-            // We pass both category + difficulty to the VM's command
+            // Pass both category + difficulty to VM's command
             if (BindingContext is CategorySelectionViewModel vm)
             {
                 vm.StartQuizCommand.Execute(_selectedCategory);

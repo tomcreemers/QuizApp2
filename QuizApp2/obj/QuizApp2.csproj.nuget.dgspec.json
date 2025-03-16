@@ -70,6 +70,10 @@
               "version": "[9.0.0, )",
               "autoReferenced": true
             },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "SQLiteNetExtensions": {
               "target": "Package",
               "version": "[2.1.0, )"
@@ -117,6 +121,10 @@
               "version": "[9.0.0, )",
               "autoReferenced": true
             },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "SQLiteNetExtensions": {
               "target": "Package",
               "version": "[2.1.0, )"
@@ -163,6 +171,10 @@
               "target": "Package",
               "version": "[9.0.0, )",
               "autoReferenced": true
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.6.0, )"
             },
             "SQLiteNetExtensions": {
               "target": "Package",

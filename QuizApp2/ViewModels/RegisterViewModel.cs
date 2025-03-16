@@ -3,6 +3,8 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using QuizApp2.Models;
 using QuizApp2.Repositories;
+using QRCoder; // QRCoder package
+using QuizApp2.Views;
 
 namespace QuizApp2.ViewModels
 {
@@ -32,6 +34,7 @@ namespace QuizApp2.ViewModels
         {
             _navigation = navigation;
 
+            // Resolve the user repository
             _userRepo = MauiProgram
                 .CreateMauiApp()
                 .Services
@@ -59,11 +62,35 @@ namespace QuizApp2.ViewModels
                 return;
             }
 
-            var newUser = new User { Email = Email, Password = Password };
+            // Create a new user with an SVG-based QR code
+            var newUser = new User
+            {
+                Email = Email,
+                Password = Password,
+                // Generate a unique QR code as an SVG string
+                QrCode = GenerateQrCode($"{Email}-{Guid.NewGuid()}")
+            };
+
             _userRepo.Save(newUser);
 
             await App.Current.MainPage.DisplayAlert("Success", "Registration complete", "OK");
-            await _navigation.PopAsync();
+            await _navigation.PopAsync(); // Return to login
+        }
+
+        // Using QRCoder's SvgQRCode to generate an SVG string (no System.Drawing)
+        private string GenerateQrCode(string text)
+        {
+            var generator = new QRCodeGenerator();
+            var data = generator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+
+            // Create an SVG
+            var svg = new SvgQRCode(data);
+            // GetGraphic(10) returns an SVG string with a scale factor of 10
+            // Adjust scale as you like
+            var svgString = svg.GetGraphic(10);
+
+            // Return the raw <svg> ... </svg> text
+            return svgString;
         }
 
         #region INotifyPropertyChanged

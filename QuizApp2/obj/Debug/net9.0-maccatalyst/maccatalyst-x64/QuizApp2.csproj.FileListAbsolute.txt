@@ -300,6 +300,7 @@
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/QuizApp2.genruntimeconfig.cache
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/ref/QuizApp2.dll
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/QuizApp2.sourcelink.json
+/Users/school/QuizApp2/QuizApp2/bin/Debug/net9.0-maccatalyst/maccatalyst-x64/QRCoder.dll
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/Microsoft.CSharp.stamp
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/Microsoft.Extensions.Configuration.Abstractions.stamp
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/Microsoft.Extensions.Configuration.stamp
@@ -323,6 +324,7 @@
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/mscorlib.stamp
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/netstandard.stamp
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/Newtonsoft.Json.stamp
+/Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/QRCoder.stamp
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/SQLite-net.stamp
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/SQLiteNetExtensions.stamp
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/resourcestamps/SQLitePCLRaw.batteries_v2.stamp

@@ -42,17 +42,35 @@ build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Resources.Styles.
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
 
+[/Users/school/QuizApp2/QuizApp2/Views/AccountPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.AccountPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/AccountPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/AccountPage.xaml
+
 [/Users/school/QuizApp2/QuizApp2/Views/CategorySelectionPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.CategorySelectionPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views/CategorySelectionPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views/CategorySelectionPage.xaml
 
+[/Users/school/QuizApp2/QuizApp2/Views/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/HomePage.xaml
+
 [/Users/school/QuizApp2/QuizApp2/Views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views/LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views/LoginPage.xaml
+
+[/Users/school/QuizApp2/QuizApp2/Views/ManageQuestionsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.ManageQuestionsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/ManageQuestionsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/ManageQuestionsPage.xaml
 
 [/Users/school/QuizApp2/QuizApp2/Views/QuizPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

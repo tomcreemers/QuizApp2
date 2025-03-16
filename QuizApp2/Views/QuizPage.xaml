@@ -27,7 +27,8 @@
 
         <!-- Chuck Norris joke part -->
         <Label Text="Random Joke" FontSize="18" />
-        <Button Text="Get Random Joke" Command="{Binding FetchJokeCommand}" />
+        <Button Text="Get Random Joke"
+                Command="{Binding FetchJokeCommand}" />
         <Label Text="{Binding JokeText}" FontSize="14" />
     </VerticalStackLayout>
 </ContentPage>

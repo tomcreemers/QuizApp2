@@ -6,12 +6,22 @@
     Title="Login">
 
     <VerticalStackLayout Padding="20" Spacing="15">
-        <Label Text="Login" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" />
+        <Label Text="Login Page"
+               FontAttributes="Bold"
+               FontSize="24"
+               HorizontalOptions="Center" />
 
-        <Entry Placeholder="Email" Text="{Binding Email}" />
-        <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" />
+        <Entry Placeholder="Email" 
+               Text="{Binding Email}" />
 
-        <Button Text="Login" Command="{Binding LoginCommand}" />
-        <Button Text="Register" Command="{Binding GoRegisterCommand}" />
+        <Entry Placeholder="Password" 
+               Text="{Binding Password}" 
+               IsPassword="True" />
+
+        <Button Text="Login" 
+                Command="{Binding LoginCommand}" />
+
+        <Button Text="Register"
+                Command="{Binding GoRegisterCommand}" />
     </VerticalStackLayout>
 </ContentPage>

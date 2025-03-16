@@ -10,5 +10,7 @@ namespace QuizApp2.Models
 
         public string Email { get; set; }
         public string Password { get; set; }
+
+        public string QrCode { get; set; }
     }
 }

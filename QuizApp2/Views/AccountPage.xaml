@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="QuizApp2.Views.AccountPage"
+    Title="My Account">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Account Info"
+               FontAttributes="Bold"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <!-- Email address display -->
+        <Label Text="{Binding Email}"
+               FontSize="18"
+               HorizontalOptions="Center" />
+
+        <!-- If you have an SVG or base64 QR, you might use a WebView or Image -->
+        <!-- Here we just show text for simplicity -->
+        <Label Text="QR Code (Placeholder)" 
+               FontSize="14"
+               HorizontalOptions="Center" 
+               Margin="0,20,0,0"/>
+
+        <Button Text="Return" Command="{Binding ReturnCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

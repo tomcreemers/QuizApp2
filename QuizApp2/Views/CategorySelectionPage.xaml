@@ -32,8 +32,9 @@
 
         <!-- Picker for difficulties (1..5) -->
         <Picker ItemsSource="{Binding Difficulties}" 
-                Title="Select Difficulty"
-                SelectedItem="{Binding SelectedDifficulty}" />
+                SelectedItem="{Binding SelectedDifficulty}"
+                WidthRequest="200"
+                HorizontalOptions="Center" />
 
         <Button Text="Start Quiz"
                 Clicked="OnStartQuizClicked" />
