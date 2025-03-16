@@ -2,13 +2,13 @@
 {
     public partial class App : Application
     {
-        public static int LoggedInUserId { get; set; } // default 0 if none
+        // Keep track of the user currently logged in
+        public static Models.User LoggedInUser { get; set; }
 
         public App()
         {
             InitializeComponent();
-
-            // Always start with the Login page
+            // Always start at LoginPage
             MainPage = new NavigationPage(new Views.LoginPage());
         }
     }

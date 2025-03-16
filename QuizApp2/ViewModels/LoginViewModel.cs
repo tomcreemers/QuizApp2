@@ -86,9 +86,8 @@ namespace QuizApp2.ViewModels
                 {
                     Console.WriteLine($"User found: {foundUser.Email}. Logging in...");
 
-                    // We DO NOT store anything in SecureStorage:
-                    // (removed) await SecureStorage.SetAsync("email", Email);
-                    // (removed) await SecureStorage.SetAsync("password", Password);
+                    // Store the logged-in user in a static property (App.xaml.cs)
+                    App.LoggedInUser = foundUser;
 
                     await App.Current.MainPage.DisplayAlert("Success", "Login successful!", "OK");
 
