@@ -29,24 +29,10 @@ namespace QuizApp2.Repositories
             }
         }
 
-        public T Get(int id)
-        {
-            try
-            {
-                return _connection.Find<T>(id);
-            }
-            catch (Exception ex)
-            {
-                StatusMessage = $"Error: {ex.Message}";
-                return null;
-            }
-        }
-
         public void Save(T item)
         {
             try
             {
-                // Attempt to read 'Id' property
                 var idProp = typeof(T).GetProperty("Id");
                 int currentId = (int)(idProp?.GetValue(item) ?? 0);
 
@@ -65,29 +51,59 @@ namespace QuizApp2.Repositories
             }
         }
 
+        // We'll do a simple seed if T is QuizQuestion
         public void SeedQuestions()
         {
-            // Minimal seeding example
             if (typeof(T) == typeof(QuizApp2.Models.QuizQuestion))
             {
                 var existing = GetAll() as List<QuizApp2.Models.QuizQuestion>;
-                if (existing.Count == 0)
+                if (existing == null || existing.Count == 0)
                 {
                     var seedData = new List<QuizApp2.Models.QuizQuestion>
                     {
+                        // Economy
                         new QuizApp2.Models.QuizQuestion
                         {
-                            Prompt = "What is 2+2?",
-                            Category = "Math",
+                            Prompt = "What is inflation?",
+                            Category = "Economy",
                             Difficulty = "Easy"
                         },
                         new QuizApp2.Models.QuizQuestion
                         {
-                            Prompt = "What is the capital of France?",
-                            Category = "Geography",
+                            Prompt = "Name one cause of a recession.",
+                            Category = "Economy",
+                            Difficulty = "Medium"
+                        },
+
+                        // Sports
+                        new QuizApp2.Models.QuizQuestion
+                        {
+                            Prompt = "Which country won the 2018 FIFA World Cup?",
+                            Category = "Sports",
                             Difficulty = "Easy"
+                        },
+                        new QuizApp2.Models.QuizQuestion
+                        {
+                            Prompt = "Who is known as the GOAT in basketball?",
+                            Category = "Sports",
+                            Difficulty = "Medium"
+                        },
+
+                        // Tech
+                        new QuizApp2.Models.QuizQuestion
+                        {
+                            Prompt = "What does 'CPU' stand for?",
+                            Category = "Tech",
+                            Difficulty = "Easy"
+                        },
+                        new QuizApp2.Models.QuizQuestion
+                        {
+                            Prompt = "Which company created the Linux kernel?",
+                            Category = "Tech",
+                            Difficulty = "Medium"
                         }
                     };
+
                     foreach (var q in seedData)
                     {
                         Save(q as T);

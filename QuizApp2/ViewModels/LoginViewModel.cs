@@ -59,8 +59,9 @@ namespace QuizApp2.ViewModels
             if (foundUser != null)
             {
                 await App.Current.MainPage.DisplayAlert("Success", "Login successful!", "OK");
-                // Navigate to QuizPage
-                await _navigation.PushAsync(new Views.QuizPage());
+
+                // Go to CategorySelectionPage instead of QuizPage
+                await _navigation.PushAsync(new Views.CategorySelectionPage());
             }
             else
             {

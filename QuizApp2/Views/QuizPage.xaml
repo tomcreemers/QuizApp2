@@ -3,15 +3,16 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="QuizApp2.Views.QuizPage"
-    Title="Quiz + Joke Page">
+    Title="Quiz Page">
 
     <VerticalStackLayout Padding="20" Spacing="15">
-        <!-- Quiz Section -->
-        <Label Text="Quiz Question"
+        <!-- Show the selected category -->
+        <Label Text="{Binding Category}"
                FontAttributes="Bold"
-               FontSize="20"
+               FontSize="24"
                HorizontalOptions="Center" />
 
+        <!-- Show the current question -->
         <Label Text="{Binding CurrentQuestion}"
                FontSize="16"
                HorizontalOptions="Center" />
@@ -19,19 +20,9 @@
         <Button Text="Next Question"
                 Command="{Binding NextQuestionCommand}" />
 
-        <!-- Joke Section -->
-        <Label Text="Chuck Norris Joke"
-               FontAttributes="Bold"
-               FontSize="20"
-               HorizontalOptions="Center"
-               Margin="0,20,0,0" />
-
-        <Button Text="Get Random Joke"
-                Command="{Binding FetchJokeCommand}" />
-
-        <Label Text="{Binding JokeText}"
-               FontSize="16"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
+        <!-- Chuck Norris joke part -->
+        <Label Text="Random Joke" FontSize="18" />
+        <Button Text="Get Random Joke" Command="{Binding FetchJokeCommand}" />
+        <Label Text="{Binding JokeText}" FontSize="14" />
     </VerticalStackLayout>
 </ContentPage>

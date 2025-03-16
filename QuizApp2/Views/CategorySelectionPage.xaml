@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="QuizApp2.Views.CategorySelectionPage"
+    Title="Select a Category">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Choose Your Category"
+               FontAttributes="Bold"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <!-- A simple ListView or CollectionView to show categories -->
+        <CollectionView ItemsSource="{Binding Categories}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnCategorySelected">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="10">
+                        <Label Text="{Binding .}" FontSize="18" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

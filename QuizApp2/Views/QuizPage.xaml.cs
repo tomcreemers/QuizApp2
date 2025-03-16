@@ -4,10 +4,10 @@ namespace QuizApp2.Views
 {
     public partial class QuizPage : ContentPage
     {
-        public QuizPage()
+        public QuizPage(string category)
         {
             InitializeComponent();
-            BindingContext = new QuizViewModel();
+            BindingContext = new QuizViewModel(category);
         }
     }
 }

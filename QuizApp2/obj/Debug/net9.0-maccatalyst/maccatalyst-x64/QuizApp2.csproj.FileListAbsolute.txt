@@ -299,3 +299,4 @@
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/QuizApp2.pdb
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/QuizApp2.genruntimeconfig.cache
 /Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/ref/QuizApp2.dll
+/Users/school/QuizApp2/QuizApp2/obj/Debug/net9.0-maccatalyst/maccatalyst-x64/QuizApp2.sourcelink.json

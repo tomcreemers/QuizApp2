@@ -1,24 +1,33 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using QuizApp2.Services;
+using QuizApp2.Repositories;
+using QuizApp2.Models;
 
 namespace QuizApp2.ViewModels
 {
     public class QuizViewModel : INotifyPropertyChanged
     {
         private readonly JokeApiService _jokeApiService;
+        private readonly GenericRepository<QuizQuestion> _quizRepo;
 
-        // Seed a few quiz questions in-memory
-        private readonly List<string> _quizQuestions = new List<string>
+        // The chosen category (e.g. "Economy", "Sports", "Tech")
+        private string _category;
+        public string Category
         {
-            "What is 2 + 2?",
-            "What is the capital of France?",
-            "Name the largest planet in our solar system."
-        };
+            get => _category;
+            set
+            {
+                _category = value;
+                OnPropertyChanged();
+            }
+        }
 
-        private int _currentQuestionIndex = 0;
+        private List<QuizQuestion> _questions;
+        private int _currentIndex;
 
         private string _currentQuestion;
         public string CurrentQuestion
@@ -31,7 +40,6 @@ namespace QuizApp2.ViewModels
             }
         }
 
-        // For the random Chuck Norris joke
         private string _jokeText;
         public string JokeText
         {
@@ -43,34 +51,57 @@ namespace QuizApp2.ViewModels
             }
         }
 
-        // Commands
         public ICommand NextQuestionCommand { get; }
         public ICommand FetchJokeCommand { get; }
 
-        public QuizViewModel()
+        public QuizViewModel(string category)
         {
-            // Initialize the joke service
+            _category = category;
+
+            // 1. Initialize repositories/services
+            _quizRepo = MauiProgram
+                .CreateMauiApp()
+                .Services
+                .GetService<GenericRepository<QuizQuestion>>();
+
             _jokeApiService = new JokeApiService();
 
-            // Start with the first question
-            _currentQuestionIndex = 0;
-            CurrentQuestion = _quizQuestions[_currentQuestionIndex];
+            // 2. Seed if needed
+            _quizRepo.SeedQuestions();
 
-            // Create commands
+            // 3. Load questions for the chosen category
+            var allQuestions = _quizRepo.GetAll();
+            _questions = allQuestions
+                .FindAll(q => q.Category.Equals(category, StringComparison.OrdinalIgnoreCase));
+
+            if (_questions.Count == 0)
+            {
+                // If no questions found, put a fallback
+                _questions.Add(new QuizQuestion
+                {
+                    Prompt = "No questions found for this category",
+                    Category = category,
+                    Difficulty = "N/A"
+                });
+            }
+
+            // Start with index 0
+            _currentIndex = 0;
+            CurrentQuestion = _questions[_currentIndex].Prompt;
+
+            // 4. Commands
             NextQuestionCommand = new Command(OnNextQuestion);
             FetchJokeCommand = new Command(async () => await OnFetchJoke());
         }
 
         private void OnNextQuestion()
         {
-            // Cycle to the next question
-            _currentQuestionIndex = (_currentQuestionIndex + 1) % _quizQuestions.Count;
-            CurrentQuestion = _quizQuestions[_currentQuestionIndex];
+            _currentIndex = (_currentIndex + 1) % _questions.Count;
+            CurrentQuestion = _questions[_currentIndex].Prompt;
         }
 
         private async Task OnFetchJoke()
         {
-            // Fetch a random Chuck Norris joke
             JokeText = await _jokeApiService.GetRandomJokeAsync();
         }
 
