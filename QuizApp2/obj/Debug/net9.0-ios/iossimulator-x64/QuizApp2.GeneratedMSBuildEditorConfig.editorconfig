@@ -66,6 +66,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.HomePage.xa
 build_metadata.AdditionalFiles.TargetPath = Views/HomePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views/HomePage.xaml
 
+[/Users/school/QuizApp2/QuizApp2/Views/JoinSessionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.JoinSessionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/JoinSessionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/JoinSessionPage.xaml
+
 [/Users/school/QuizApp2/QuizApp2/Views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.LoginPage.xaml
@@ -89,3 +95,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.RegisterPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views/RegisterPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views/RegisterPage.xaml
+
+[/Users/school/QuizApp2/QuizApp2/Views/SessionPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = QuizApp2.Views.SessionPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/SessionPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/SessionPage.xaml

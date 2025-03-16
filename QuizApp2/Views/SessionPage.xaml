@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="QuizApp2.Views.SessionPage"
+    Title="Session Room">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+        <Label Text="Session Chat"
+               FontAttributes="Bold"
+               FontSize="24"
+               HorizontalOptions="Center" />
+
+        <!-- Chat messages list -->
+        <CollectionView ItemsSource="{Binding Messages}"
+                        HeightRequest="200">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="5">
+                        <!-- Show "userName: text" -->
+                        <Label Text="{Binding DisplayText}"
+                               FontSize="14" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Input for new chat message -->
+        <Entry Placeholder="Type a message..."
+               Text="{Binding NewMessage}" />
+        <Button Text="Send"
+                Command="{Binding SendMessageCommand}" />
+
+        <Label Text="Random Question"
+               FontAttributes="Bold"
+               FontSize="18" />
+        <Label Text="{Binding CurrentQuestion}"
+               FontSize="14" />
+        <Button Text="Get Random Question"
+                Command="{Binding GetRandomQuestionCommand}" />
+
+        <Label Text="Add a Custom Question"
+               FontAttributes="Bold"
+               FontSize="18" />
+        <Entry Placeholder="Question Prompt"
+               Text="{Binding CustomQuestionPrompt}" />
+        <Button Text="Add Question"
+                Command="{Binding AddCustomQuestionCommand}" />
+
+        <Button Text="Return"
+                Command="{Binding ReturnCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

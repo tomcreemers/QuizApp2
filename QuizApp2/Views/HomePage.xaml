@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ContentPage 
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="QuizApp2.Views.HomePage"
@@ -17,11 +17,16 @@
         <Button Text="Select Quiz"
                 Command="{Binding GoCategoryCommand}" />
 
-        <Button Text="Maak Eigen Vraag"
+        <Button Text="Manage Questions"
                 Command="{Binding GoManageQuestionsCommand}" />
 
         <Button Text="Create Session"
                 Command="{Binding GoCreateSessionCommand}" />
 
+        <Button Text="Join Session"
+                Command="{Binding GoJoinSessionCommand}" />
+
+        <!-- <Button Text="Go to Session (ID=1)"
+                Clicked="OnGoToSessionClicked" /> -->
     </VerticalStackLayout>
 </ContentPage>

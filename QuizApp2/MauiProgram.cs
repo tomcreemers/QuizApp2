@@ -24,7 +24,8 @@ namespace QuizApp2
             // Register the API service
             builder.Services.AddSingleton<JokeApiService>();
             builder.Services.AddSingleton<GenericRepository<Session>>();
-
+            builder.Services.AddSingleton<GenericRepository<SessionParticipant>>();
+            builder.Services.AddSingleton<GenericRepository<SessionMessage>>();
 
 #if DEBUG
             builder.Logging.AddDebug();
